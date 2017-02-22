@@ -1,0 +1,17 @@
+{
+  "name": "vue-cli-template-webpack",
+  "version": "2.0.0",
+  "license": "MIT",
+  "description": "A full-featured Webpack setup with hot-reload, lint-on-save, unit testing & css extraction.",
+  "scripts": {
+    "docs": "node makes/doc-open.js",
+    "build": "node makes/doc-build.js"
+  },
+  "devDependencies": {
+    "express": "^4.13.3",
+    "opn": "^4.0.2",
+    "shelljs": "^0.7.4",
+    "webpack": "^1.13.2",
+    "yaml-loader": "^0.4.0"
+  }
+}

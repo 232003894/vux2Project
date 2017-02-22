@@ -1,0 +1,169 @@
+tags:
+  - 布局组件
+name: ViewBox
+filetype: com
+note: |
+  视图容器<br>
+  其他说明 参考：https://vux.li/?x-page=github_readme#/zh-CN/components?id=viewbox
+tip: |
+  vux-loader中 <br/>
+  &nbsp;&nbsp;配置了template-parser：(https://vux.li/?x-page=github_readme#/zh-CN/vux-loader?id=template-parser) <br/>
+  &nbsp;&nbsp;&nbsp;&nbsp;在模板代码中简写`<view-box>`，`<view-box`会被 替换为`<view-box ref='cBox'` <br/>
+  &nbsp;&nbsp;配置了script-parser：(https://vux.li/?x-page=github_readme#/zh-CN/vux-loader?id=script-parser) <br/>
+  &nbsp;&nbsp;&nbsp;&nbsp;在js代码中简写`$box`会被替换为`this.$refs.cBox`<br/>
+  &nbsp;&nbsp;&nbsp;&nbsp;但不能在回调中使用，因为`this`的作用域问题<br>
+code: |   
+  <template>
+    <div id="app" style="height:100%;">
+      <view-box>
+        <x-header slot="header">
+          选择平台
+        </x-header>
+        主体        
+        <div slot="error">
+          出错了-(自定义错误)
+          <br> 您可以：
+          <br> 1.aaaaaaa
+          <br> 2.bbbbbbbb
+        </div>
+        <tabbar>
+          <tabbar-item selected>
+            <icon slot="icon" type="homeon" style=" color:#333;"></icon>
+            <span slot="label">首页</span>
+          </tabbar-item>
+        </tabbar>
+      </view-box>
+    </div>
+  </template>
+
+  // $box
+  // this.$refs.cBox
+  import {
+    ViewBox,
+    XHeader
+  } from 'app'
+
+  import {
+    Tabbar,
+    TabbarItem
+  } from 'vux'
+   export default {
+    name:'app',
+    components:{
+      ViewBox,
+      XHeader,
+      Tabbar,
+      TabbarItem
+    }
+  }
+attrs:
+  padding:
+    type: Number
+    note: 头部底部的总高度，默认值：101
+solts:
+  default:
+    note: 主体内容，可滚动的区域
+  header:
+    note: 顶部区域，如果要使用统一的XHeader，可以使用该slot
+  bottom:
+    note: 底部区域，Tabbar可以使用该slot
+  error:
+    note: 自定义错误区域
+methods:
+  onload:
+    note: dom load，给视图内的刷新用的，如果不需要刷新则调用 $api.onload
+    args:
+      callback:
+        type: Function
+        note: 回调方法
+    code: |       
+      $box.onload(()=>{
+        console.log('添加到box中的onload回调，会加入到box的刷新回调中')
+      })    
+      $api.onload(()=>{
+        console.log('添加到dom中的onload回调，不会加入到box的刷新回调中')
+      })
+  mounted:
+    note: plus load(5+ plusReady)，给视图内的刷新用的，如果不需要刷新则调用 $api.mounted
+    args:
+      callback:
+        type: Function
+        note: 回调方法
+    code: |       
+      $box.mounted(()=>{
+        console.log('添加到box中的plusReady回调，会加入到box的刷新回调中')
+      })    
+      $api.mounted(()=>{
+        console.log('添加到dom中的plusReady回调，不会加入到box的刷新回调中')
+      })
+  refresh:
+    note: 视图内刷新
+    code: |       
+      $box.refresh() 
+  webError:
+    note: 显示网络、加载错误
+    args:
+      value:
+        type: Boolean
+        note: 是否显示，默认值：true
+        required: false
+      msg:
+        type: String
+        note: 错误提示，默认值：'网络不给力'
+        required: false
+      icon:
+        type: String
+        note: 图标type，默认值：'wifi'
+        required: false
+    code: |       
+      // 显示网络错误
+      $box.webError()
+      $box.webError(true,'加载失败了'，'guanbi1')    
+      // 关闭网络错误  
+      $box.webError(false) 
+  customeError:
+    note: 自定义错误，错误内容在插槽 'error' 中编辑
+    args:
+      value:
+        type: Boolean
+        note: 是否显示，默认值：true
+        required: false
+    code: |       
+      // 显示自定义错误
+      $box.customeError()
+      $box.customeError(true)    
+      // 关闭自定义错误  
+      $box.customeError(false) 
+  scrollTo:
+    note: 滚动到指定位置
+    args:
+      top:
+        type: Number
+        note: 指定高度
+    code: |       
+      $box.scrollTo(160)
+  getScrollTop:
+    note: 获取当前滚动距离
+    return:
+        type: Number
+        note: 当前滚动距离
+    code: |       
+      $box.getScrollTop()
+  getScrollBody:
+    note: 获取滚动div, 也可以直接用组件引用的.$refs.viewBoxBody
+    return:
+        type: Object
+        note: viewBoxBody
+    code: |       
+      $box.getScrollBody()
+  setBodyHeight:
+    note: 设置viewBoxBody的高度，默认会在window.onresize中自动计算
+    args:
+      height:
+        type: Number
+        note: 指定高度
+    code: |       
+      $box.scrollTo(160)
+changes:
+  v1.1.1:
+      - '[change] 新增'

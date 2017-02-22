@@ -1,0 +1,32 @@
+tags:
+  - 基础组件
+name: Icon
+filetype: com
+note: |
+  图标
+tip: |
+  可以兼容vux的Icon<br>
+  参考：https://vux.li/?x-page=github_readme#/zh-CN/components?id=icon
+code: |       
+  import { Icon } from 'app'
+  // 使用项目的
+  // wifi 图标
+  <icon type="wifi" color="red" size="20px"></icon>
+  // 使用vux的 success 图标
+  <icon type="success" :vux="true"></icon>
+attrs:
+  type:
+    type: String
+    note: 图标名字
+  color:
+    type: String
+    note: 图标颜色
+  size:
+    type: String
+    note: 字体大小
+  vux:
+    type: Boolean
+    note: 是否使用vux的
+changes:
+  v1.1.1:
+      - '[change] 新增'

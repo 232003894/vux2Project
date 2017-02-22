@@ -1,0 +1,55 @@
+tags:
+  - 布局组件
+name: XHeader
+filetype: com
+note: |
+  头部导航
+tip: |
+  修改了默认后退方法<br>
+  其他全部与vux的XHeader一致<br>
+  参考：https://vux.li/?x-page=github_readme#/zh-CN/components?id=xheader
+code: |       
+  import { XHeader } from 'app'
+  <x-header>选择平台</x-header>
+attrs:
+  left-options:
+    type: Object
+    note: 左侧选项
+    fields:
+      showBack:
+        type: Boolean
+        note: 是否显示返回文字，默认值：true
+      backText:
+        type: String
+        note: 返回文字，默认值'返回'
+      preventGoBack:
+        type: Boolean
+        note: 是否阻止返回，默认值：false
+  title:
+    type: String
+    note: 标题
+  transition:
+    type: String
+    note: 标题出现的动画
+  right-options:
+    type: Object
+    note: 右侧选项
+    fields:
+      showMore:
+        type: Boolean
+        note: 是否显示右侧的更多图标，默认值：false
+solts:
+  default:
+    note: 标题
+  right:
+    note: 右侧部分
+events:
+  on-click-more:
+    note: 点击右侧更多时触发
+  on-click-back:
+    note: 点击左边返回时触发
+  on-click-title:
+    note: 点击标题时触发
+changes:
+  v1.1.1:
+      - '[change] 新增'

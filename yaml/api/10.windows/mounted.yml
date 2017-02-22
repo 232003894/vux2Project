@@ -1,0 +1,24 @@
+tags:
+  - 窗体操作
+  - 通用
+name: mounted
+filetype: method
+note: |
+  plus设备加载完成
+tip: |
+  web：等同于onload <br/>
+  5+：‘plusready’后（window.plus存在）：立即执行，否则加入到‘plusready’事件中
+args:
+  callback:
+    type: Function
+    note: 窗体
+return:
+  type: Object
+  note: $api对象
+code: |        
+  $api.mounted(()=>{
+    console.log('页面加载完成')
+  })
+changes:
+  v1.1.0:
+    - '[fix] 手机app中会调用2次的bug'
