@@ -11,7 +11,7 @@ self.$config = {
   ],
   // 这个插件同时需要你的 URL
   // 因为 docsearch 是按照你的线上 URL 抓取内容的
-  url: 'https://232003894.github.io/vux2MutiPages',
+  url: 'https://232003894.github.io/vux2Project',
   home: '/README.md',
   nav: [
     // 首页
