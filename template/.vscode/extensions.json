@@ -8,6 +8,8 @@
     "christian-kohler.path-intellisense",
     "abusaidm.html-snippets",
     "oysun.vuehelper",
-    "pprice.better-merge"
+    "pprice.better-merge",
+    "eamodio.gitlens",
+    "donjayamanne.githistory"
   ]
 }
