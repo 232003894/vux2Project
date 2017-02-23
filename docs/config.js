@@ -3,7 +3,7 @@ self.$config = {
   plugins: [
     docsearch({
       apiKey: '24c06c1a6cae119f9b8241a5b427b7aa',
-      indexName: 'vux2Project'
+      indexName: 'vux2MutiPages'
       // docsearch 允许你把抓取的内容按照 tag 分类
       // 详情请联系 algolia 客服，这里你只需要把你想搜索的 tag 填进来就行了
       // tags: ['Action', 'Back', 'zh-Hant']
