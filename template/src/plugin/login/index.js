@@ -65,7 +65,7 @@ const plugin = {
         //   // 来源页面 登陆后 需要刷新
         // }
         // 全局事件通知：已经登录
-        options.fireAll('logined')
+        // options.fireAll('logined')
         // 登录完成后关闭
         hide()
       }
