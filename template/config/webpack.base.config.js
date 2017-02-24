@@ -123,7 +123,7 @@ var webpackConfig = {
        *ExplorerMobile or ie_mob for Internet Explorer Mobile.
        */
       require('autoprefixer')({
-        browsers: ['last 2 versions', 'Android >= 4.0']
+        browsers: ['last 7 versions', 'Android >= 4.0']
       })
     ]
   }
