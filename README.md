@@ -31,9 +31,4 @@ $ npm run dev
   - CSS从组件中提取并压缩 [cssnano](https://github.com/ben-eb/cssnano).
   - 拷贝生成文件到指定目录.
 
-[![](https://img.shields.io/npm/l/h5p.js.svg?style=flat-square)](https://www.npmjs.com/package/h5p.js) 
-[![](https://img.shields.io/npm/v/h5p.js.svg?style=flat-square)](https://www.npmjs.com/package/h5p.js) 
-[![](https://img.shields.io/npm/dm/h5p.js.svg?style=flat-square)](https://www.npmjs.com/package/h5p.js) 
-[![](https://img.shields.io/npm/dt/h5p.js.svg?style=flat-square)](https://www.npmjs.com/package/h5p.js) 
-
 API文档：文档：[http://jefferic.oschina.io/yipifaguanjia/#/md/api.md](http://jefferic.oschina.io/yipifaguanjia/#/md/api.md)
