@@ -844,8 +844,8 @@
             "\\$api.alert(${1:msg}, {",
             "\ttitle: '标题',",
             "\tbuttonText: '知道了',",
-            "\tonShow: () => {},",
-            "\tonHide: () => {}",
+            "\tonShow() {},",
+            "\tonHide() {}",
             "})"
         ],
         "description": "弹窗信息,显示一个用户必须注意到并且必须点击按钮确认才能关闭的信息"
@@ -864,10 +864,10 @@
             "\ttitle: '标题',",
             "\tconfirmText: '确定',",
             "\tcancelText: '取消',",
-            "\tonShow: () => {},",
-            "\tonHide: () => {},",
-            "\tonConfirm: () => {},",
-            "\tonCancel: () => {}",
+            "\tonShow() {},",
+            "\tonHide() {},",
+            "\tonConfirm() {},",
+            "\tonCancel() {}",
             "})"
         ],
         "description": "弹窗信息,显示一个用户必须注意到并且必须点击按钮确认才能关闭的信息"
@@ -883,8 +883,8 @@
         "prefix": "a loading",
         "body": [
             "\\$api.loading(${1:msg}, {",
-            "\tonShow: () => {},",
-            "\tonHide: () => {}",
+            "\tonShow() {},",
+            "\tonHide() {}",
             "})"
         ],
         "description": "等待对话框，加载中的效果"
@@ -922,8 +922,8 @@
         "body": [
             "\\$api.toast(${1:msg}, {",
             "\ttime: 2000,",
-            "\tonShow: () => {},",
-            "\tonHide: () => {}",
+            "\tonShow() {},",
+            "\tonHide() {}",
             "})"
         ],
         "description": "弹窗信息,显示一个用户必须注意到并且必须点击按钮确认才能关闭的信息"
