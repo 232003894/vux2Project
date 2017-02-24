@@ -31,5 +31,6 @@ $ npm run dev
   - CSS从组件中提取并压缩 [cssnano](https://github.com/ben-eb/cssnano).
   - 拷贝生成文件到指定目录.
 
-  
-API文档：https://232003894.github.io/vux2Project
+[![](https://img.shields.io/npm/v/h5p.js.svg?style=flat-square)](https://www.npmjs.com/package/h5p.js) 
+
+API文档：文档：[http://jefferic.oschina.io/yipifaguanjia/#/md/api.md](http://jefferic.oschina.io/yipifaguanjia/#/md/api.md)
