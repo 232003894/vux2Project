@@ -1,6 +1,6 @@
 <template>
   <div id="app" style="height:100%;">
-    <view-box>
+    <view-box bottom="0">
       <x-header slot="header" :left-options="{showBack:true,preventGoBack:true,backText:'取消'}" @on-click-back="back()" style="width:100%;position:absolute;left:0;top:0;z-index:100;">登录</x-header>
       <br>
       <group label-width="5em">

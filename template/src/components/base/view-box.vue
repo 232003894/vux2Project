@@ -1,7 +1,7 @@
 <template>
   <div class="weui_tab">
     <slot name="header"></slot>
-    <div class="weui_tab_bd vux-fix-safari-overflow-scrolling" ref="viewBoxBody" id="vux_view_box_body" :style="{height:bodyHeight}">
+    <div class="weui_tab_bd vux-fix-safari-overflow-scrolling" ref="viewBoxBody" id="vux_view_box_body" :style="{paddingBottom:bottom,paddingTop:top}">
       <div :class="webcss">
         <div class="ui-error" @click="refresh">
           <icon :type='nowebIcon'></icon>
@@ -33,7 +33,7 @@
     },
     data() {
       return {
-        bodyHeight: (document.body.offsetHeight - this.padding) + 'px',
+        bodyHeight: (document.body.offsetHeight) + 'px',
         webcss: 'pro-webError',
         customecss: 'pro-webError',
         noweb: '网络不给力',
@@ -43,11 +43,6 @@
     },
     mounted() {
       const self = this
-      window.onresize = () => {
-        return (() => {
-          self.bodyHeight = (document.body.offsetHeight - this.padding) + 'px'
-        })()
-      }
       this.$nextTick(function() {
         setTimeout(() => {
           self.getScrollBody().className = 'weui_tab_bd vux-fix-safari-overflow-scrolling active'
@@ -55,10 +50,13 @@
       })
     },
     props: {
-      // 头部底部的总高度
-      'padding': {
-        type: Number,
-        default: 101
+      top: {
+        type: String,
+        default: '46px'
+      },
+      bottom: {
+        type: String,
+        default: '55px'
       }
     },
     methods: {
@@ -122,31 +120,10 @@
       },
       getScrollBody() {
         return this.$refs.viewBoxBody
-      },
-      setBodyHeight(val) {
-        this.getScrollBody().style.height = this.bodyHeight
-      }
-    },
-    watch: {
-      bodyHeight(val) {
-        if (!this.timer) {
-          this.bodyHeight = val
-          this.timer = true
-          let self = this
-          setTimeout(function() {
-            self.setBodyHeight(self.bodyHeight)
-            self.timer = false
-          }, 400)
-        }
       }
     }
   }
 </script>
-<style scoped>
-  .weui_tab_bd {
-    padding-bottom: 0;
-  }
-</style>
 <style lang="less">
   @import '~vux/src/styles/weui/widget/weui_tab/weui_tab_tabbar';
 </style>

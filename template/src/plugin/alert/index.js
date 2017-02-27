@@ -3,7 +3,7 @@ import myMsg from 'vux/src/components/alert'
 let $vm
 let nShow
 let nHide
-// 是否优先使用原生的,默认值false
+// 是否优先使用原生的,默认值：false
 let nativeFirst = false
 
 const plugin = {
@@ -50,8 +50,8 @@ const plugin = {
         if (typeof opts === 'object') {
           // 弹窗标题
           if (opts.title && !msg) {
-            msg = opts.title
-            opts.title = ''
+            msg = ''
+            // opts.title = ''
           }
           // 按钮文字
           opts.buttonText = opts.buttonText || '确定'
@@ -69,7 +69,7 @@ const plugin = {
           }
         }
         // 内容，支持 html，和默认slot同样功能
-        $vm.$el.querySelector('.weui_dialog_bd').innerHTML = msg
+        $vm.$el.querySelector('.weui-dialog__bd').innerHTML = msg
         opts.onShow && opts.onShow($vm)
         $vm.showValue = true
       }

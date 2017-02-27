@@ -1,6 +1,6 @@
 <template>
   <div id="app" style="height:100%;">
-    <view-box>
+    <view-box bottom="0">
       <img src="../../../assets/img/logo.png">
       <flexbox>
         <flexbox-item>

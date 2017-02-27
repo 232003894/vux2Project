@@ -1,6 +1,6 @@
 <template>
   <div id="app" style="height:100%;">
-    <view-box :padding="46">
+    <view-box bottom="0">
       <x-header slot="header" :left-options="{showBack:true,preventGoBack:true,backText:'取消'}" @on-click-back="back()">权限不足</x-header>
       权限不足
     </view-box>

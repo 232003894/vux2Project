@@ -79,7 +79,7 @@ const plugin = {
           }
         }
         opts.onShow && opts.onShow()
-        $vm.$el.querySelector('.weui_dialog_ft').addEventListener('click', closeHandler, false)
+        $vm.$el.querySelector('.weui-dialog__ft').addEventListener('click', closeHandler, false)
         // if (!hasWatch) {
         //   // $vm.$watch('showValue', (val) => {
         //   //   if (!val) {

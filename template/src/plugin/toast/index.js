@@ -55,6 +55,8 @@ const plugin = {
         if (typeof opts === 'object') {
           // 类型，可选值 success, warn, cancel, text
           opts.type = opts.type || 'text'
+          // 显示位置，默认值：'middle'，可选值 default, top, middle, bottom
+          opts.position = opts.position || 'middle'
           // 显示时间
           opts.time = opts.time || 2000
           // 是否显示遮罩，如果显示，用户将不能点击页面上其他元素
@@ -63,6 +65,9 @@ const plugin = {
           }
           opts.onShow = opts.onShow || (() => {})
           opts.onHide = opts.onHide || (() => {})
+          if (!opts.width) {
+            opts.width = 'auto'
+          }
           for (let i in opts) {
             $vm[i] = opts[i]
           }

@@ -18,3 +18,5 @@ npm run build
 npm run build+
 
 ```
+
+API文档：文档：[http://jefferic.oschina.io/yipifaguanjia/#/md/api.md](http://jefferic.oschina.io/yipifaguanjia/#/md/api.md)

@@ -56,7 +56,12 @@
 <style lang="less">
   @import '~vux/src/styles/variable.less';
   .vux-header {
-    position: relative;
+    width: 100%;
+    position: absolute;
+    left: 0px;
+    top: 0px;
+    z-index: 100;
+    /*position: relative;*/
     padding: 3px 0;
     box-sizing: border-box;
     background-color: @header-background-color;
